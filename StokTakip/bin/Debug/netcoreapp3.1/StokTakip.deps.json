@@ -8,10 +8,50 @@
     ".NETCoreApp,Version=v3.1": {
       "StokTakip/1.0.0": {
         "dependencies": {
+          "EcoWpf": "7.0.0.14211",
           "System.Data.SqlClient": "4.8.3"
         },
         "runtime": {
           "StokTakip.dll": {}
+        }
+      },
+      "EcoCore/7.0.0.14211": {
+        "runtime": {
+          "lib/net40/Eco.Handles.dll": {
+            "assemblyVersion": "7.0.0.14211",
+            "fileVersion": "7.0.0.14211"
+          },
+          "lib/net40/Eco.Interfaces.dll": {
+            "assemblyVersion": "7.0.0.14211",
+            "fileVersion": "7.0.0.14211"
+          },
+          "lib/net40/Eco.LinqExtender.dll": {
+            "assemblyVersion": "7.0.0.14211",
+            "fileVersion": "7.0.0.14211"
+          },
+          "lib/net40/MDriven.Net.Http.dll": {
+            "assemblyVersion": "7.0.0.14211",
+            "fileVersion": "7.0.0.14211"
+          }
+        }
+      },
+      "EcoWpf/7.0.0.14211": {
+        "dependencies": {
+          "EcoCore": "7.0.0.14211"
+        },
+        "runtime": {
+          "lib/net40/Eco.WPF.dll": {
+            "assemblyVersion": "7.0.0.14211",
+            "fileVersion": "7.0.0.14211"
+          },
+          "lib/net40/WECPOFLogic.dll": {
+            "assemblyVersion": "7.0.0.14211",
+            "fileVersion": "7.0.0.14211"
+          },
+          "lib/net40/WPFViewModelExternalControls.dll": {
+            "assemblyVersion": "7.0.0.14211",
+            "fileVersion": "7.0.0.14211"
+          }
         }
       },
       "Microsoft.NETCore.Platforms/3.1.0": {},
@@ -96,6 +136,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "EcoCore/7.0.0.14211": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PNFm+2QHLdgRC4hGvubc7heNMHcF4iideV9VjEzv76fAHHtLoCKwHyX2GkbOxW5EKSOSmioLcIZCrVRHPveY6A==",
+      "path": "ecocore/7.0.0.14211",
+      "hashPath": "ecocore.7.0.0.14211.nupkg.sha512"
+    },
+    "EcoWpf/7.0.0.14211": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vutLXQK8cZtH4x4s5dMLcGsc/JkOuIomY6IpYrlwx57WembxdvAq/JaBBlWB4jccXxNfIyaMEvtReCY8JC53bw==",
+      "path": "ecowpf/7.0.0.14211",
+      "hashPath": "ecowpf.7.0.0.14211.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",

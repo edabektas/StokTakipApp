@@ -21,3 +21,10 @@ C:\Users\Asus\source\repos\StokTakip\StokTakip\bin\Debug\netcoreapp3.1\runtimes\
 C:\Users\Asus\source\repos\StokTakip\StokTakip\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Asus\source\repos\StokTakip\StokTakip\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Asus\source\repos\StokTakip\StokTakip\obj\Debug\netcoreapp3.1\StokTakip.csproj.CopyComplete
+C:\Users\Asus\source\repos\StokTakip\StokTakip\bin\Debug\netcoreapp3.1\Eco.Handles.dll
+C:\Users\Asus\source\repos\StokTakip\StokTakip\bin\Debug\netcoreapp3.1\Eco.Interfaces.dll
+C:\Users\Asus\source\repos\StokTakip\StokTakip\bin\Debug\netcoreapp3.1\Eco.LinqExtender.dll
+C:\Users\Asus\source\repos\StokTakip\StokTakip\bin\Debug\netcoreapp3.1\MDriven.Net.Http.dll
+C:\Users\Asus\source\repos\StokTakip\StokTakip\bin\Debug\netcoreapp3.1\Eco.WPF.dll
+C:\Users\Asus\source\repos\StokTakip\StokTakip\bin\Debug\netcoreapp3.1\WECPOFLogic.dll
+C:\Users\Asus\source\repos\StokTakip\StokTakip\bin\Debug\netcoreapp3.1\WPFViewModelExternalControls.dll

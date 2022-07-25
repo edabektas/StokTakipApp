@@ -264,6 +264,7 @@ namespace StokTakip
             this.txb_stokAra_magaza.PlaceholderText = "Mağaza";
             this.txb_stokAra_magaza.Size = new System.Drawing.Size(218, 27);
             this.txb_stokAra_magaza.TabIndex = 24;
+            this.txb_stokAra_magaza.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txb_stokAra_magaza_KeyUp);
             // 
             // txb_stokAra_kayitYapan
             // 
@@ -272,6 +273,7 @@ namespace StokTakip
             this.txb_stokAra_kayitYapan.PlaceholderText = "Kayıt Yapan";
             this.txb_stokAra_kayitYapan.Size = new System.Drawing.Size(218, 27);
             this.txb_stokAra_kayitYapan.TabIndex = 23;
+            this.txb_stokAra_kayitYapan.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txb_stokAra_kayitYapan_KeyUp);
             // 
             // txb_stokAra_stokBedeni
             // 
@@ -280,6 +282,7 @@ namespace StokTakip
             this.txb_stokAra_stokBedeni.PlaceholderText = "Stok Bedeni";
             this.txb_stokAra_stokBedeni.Size = new System.Drawing.Size(218, 27);
             this.txb_stokAra_stokBedeni.TabIndex = 22;
+            this.txb_stokAra_stokBedeni.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txb_stokAra_stokBedeni_KeyUp);
             // 
             // txb_stokAra_stokModeli
             // 
@@ -288,6 +291,7 @@ namespace StokTakip
             this.txb_stokAra_stokModeli.PlaceholderText = "Stok Modeli";
             this.txb_stokAra_stokModeli.Size = new System.Drawing.Size(218, 27);
             this.txb_stokAra_stokModeli.TabIndex = 20;
+            this.txb_stokAra_stokModeli.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txb_stokAra_stokModeli_KeyUp);
             // 
             // txb_stokAra_stokAdi
             // 
@@ -296,6 +300,7 @@ namespace StokTakip
             this.txb_stokAra_stokAdi.PlaceholderText = "Stok Adı";
             this.txb_stokAra_stokAdi.Size = new System.Drawing.Size(218, 27);
             this.txb_stokAra_stokAdi.TabIndex = 19;
+            this.txb_stokAra_stokAdi.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txb_stokAra_stokAdi_KeyUp);
             // 
             // btn_stokEkle
             // 
