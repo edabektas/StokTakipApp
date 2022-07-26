@@ -34,10 +34,11 @@ namespace StokTakip
 
         void filldatagrid()
         {
-          con = new SqlConnection("server=.; Initial Catalog=Products;Integrated Security=SSPI");  //daha önceden yazılan bir classtan örnek alma işlemi
-                                                                                                         //yapma sebebimiz ise bu class içerisindeki metot, property vb şeyleri burada kullanabilmek için, içindeki şey connection string  
-                                                                                                         //server name: ., bağlanmak istediğim dbyi b belirtiyorum :products, ıntegrated security: veri tabanlarında dıaşrdan bir bağlantı 
-                                                                                                         //geldiğinde güvenli bağlantı sağlamak için kullanılan bir güvenlik protoklu
+          con = new SqlConnection("Data Source=ED;Initial Catalog=Products;Integrated Security=True");  //daha önceden yazılan bir classtan örnek alma işlemi
+                                                                                                                     //yapma sebebimiz ise bu class içerisindeki metot, property vb şeyleri burada kullanabilmek için, içindeki şey connection string  
+            try
+            {                                                                                         //server name: ., bağlanmak istediğim dbyi b belirtiyorum :products, ıntegrated security: veri tabanlarında dıaşrdan bir bağlantı 
+                                                                                                      //geldiğinde güvenli bağlantı sağlamak için kullanılan bir güvenlik protoklu
                 da = new SqlDataAdapter("Select *From stok1", con);
                 ds = new DataSet();
                 con.Open(); //sql bağlantısını başlatır
@@ -46,11 +47,23 @@ namespace StokTakip
                                                                  //propertysine  bir atama yaptık. ds şyani datasetin tables properyysinden gelen verileri kullandığımız datagrid view'a datasource oalrak verdik ve doldurduk
                 data_stokTakip.Columns["id"].Visible = false;
                 con.Close(); //sql bağlantsını sonlandırdık.
-                       //sql bağlanrtısını sonlandırmazsak stok1 adlı tabloya başka herhangi bir kaynak select sorgusu çektiği zaman sql tarafında lock oluşur bu lock oluşmaması
-                         //veri tabanına olan bağlantıyı sonlandırırız. yani kısacası transaction yapısını korumak için başlattığımız bağlantıyı sonlandırırız.
-                         //commit ve rollback işlemi de aynı şeyi sağlar
-        
+                             //sql bağlanrtısını sonlandırmazsak stok1 adlı tabloya başka herhangi bir kaynak select sorgusu çektiği zaman sql tarafında lock oluşur bu lock oluşmaması
+                             //veri tabanına olan bağlantıyı sonlandırırız. yani kısacası transaction yapısını korumak için başlattığımız bağlantıyı sonlandırırız.
+                             //commit ve rollback işlemi de aynı şeyi sağlar
+            }
        
+
+            catch(SqlException ex)
+            {
+                if(MessageBox.Show("Veritabanına bağlanılamıyor. Devam etmek için TAMAM, çıkış için İPTAL butonuna basınız.", "StokTakip", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    con = null;
+                }
+                else
+                {
+                  this.Close();
+                }
+            }
         }
 
 
@@ -70,40 +83,51 @@ namespace StokTakip
         }
 
         private void btn_stokEkle_Click(object sender, EventArgs e)
+           
         {
-            if (karsilastir(txb_stokSeriNo.Text))
+
+            try
             {
-                string sorgu = "Insert into stok1 (StokAdi,StokModeli,StokSeriNo,StokBedeni,StokAdedi,StokTarihi,KayitYapan,Magaza) values (@StokAdi,@StokModeli,@StokSeriNo,@StokBedeni,@StokAdedi,@StokTarihi,@KayitYapan,@Magaza)";
-                //stok ekle butonunun click metoduna yazılan bu kodda yukardaki sorgu bir insert işlemi yapmakta.
-                cmd = new SqlCommand(sorgu, con);
-                cmd.Parameters.AddWithValue("@StokAdi", txb_stokAdi.Text);
-                cmd.Parameters.AddWithValue("@StokModeli", txb_stokModeli.Text);
-                cmd.Parameters.AddWithValue("@StokSeriNo", txb_stokSeriNo.Text);
-                cmd.Parameters.AddWithValue("@StokBedeni", cmb_stokBedeni.Text);
-                cmd.Parameters.AddWithValue("@StokAdedi", txb_stokAdedi.Text);
-                cmd.Parameters.AddWithValue("@StokTarihi", dateTime_stokTarihi.Value);
-                cmd.Parameters.AddWithValue("@KayitYapan", txb_kayıtYapan.Text);
-                cmd.Parameters.AddWithValue("@Magaza", txb_magaza.Text);
+                if (karsilastir(txb_stokSeriNo.Text))
+                {
+                    string sorgu = "Insert into stok1 (StokAdi,StokModeli,StokSeriNo,StokBedeni,StokAdedi,StokTarihi,KayitYapan,Magaza) values (@StokAdi,@StokModeli,@StokSeriNo,@StokBedeni,@StokAdedi,@StokTarihi,@KayitYapan,@Magaza)";
+                    //stok ekle butonunun click metoduna yazılan bu kodda yukardaki sorgu bir insert işlemi yapmakta.
+                    cmd = new SqlCommand(sorgu, con);
+                    cmd.Parameters.AddWithValue("@StokAdi", txb_stokAdi.Text);
+                    cmd.Parameters.AddWithValue("@StokModeli", txb_stokModeli.Text);
+                    cmd.Parameters.AddWithValue("@StokSeriNo", txb_stokSeriNo.Text);
+                    cmd.Parameters.AddWithValue("@StokBedeni", cmb_stokBedeni.Text);
+                    cmd.Parameters.AddWithValue("@StokAdedi", Convert.ToInt32(txb_stokAdedi.Text));
+                    cmd.Parameters.AddWithValue("@StokTarihi", dateTime_stokTarihi.Value);
+                    cmd.Parameters.AddWithValue("@KayitYapan", txb_kayıtYapan.Text);
+                    cmd.Parameters.AddWithValue("@Magaza", txb_magaza.Text);
 
-                con.Open();
-                cmd.ExecuteNonQuery(); //dml yani insert update deleet gibi geriye değer dödnürmeyen ve belli kayıt sayısını işleme sokmaya yarayan sql deyinmlerinde kullandığımız
-                                       //sqlcommand sınıfı içerisinden gelen hazır bir metot
-                con.Close();
+                    con.Open();
+                    cmd.ExecuteNonQuery(); //dml yani insert update deleet gibi geriye değer dödnürmeyen ve belli kayıt sayısını işleme sokmaya yarayan sql deyinmlerinde kullandığımız
+                                           //sqlcommand sınıfı içerisinden gelen hazır bir metot
+                    con.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Bu seri numarasında bir stok bulunmaktadır.Yeni bir kayıt oluşturunuz.", "STOK MEVCUT", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+
+                filldatagrid();
+                data_stokTakip.ClearSelection();
             }
-            else
+
+            catch(Exception)
             {
-                MessageBox.Show("Bu seri numarasında bir stok bulunmaktadır.Yeni bir kayıt oluşturunuz.", "STOK MEVCUT", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+               
+                MessageBox.Show("Eklenecek stok yok!","StokTakip",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-                     
-            filldatagrid();
-            data_stokTakip.ClearSelection();
-
         }
 
         private void btn_stokGüncelle_Click(object sender, EventArgs e)
         {
-
+            try
+            {
 
                 string sorgu = "Update stok1 Set StokAdi=@StokAdi,StokModeli=@StokModeli,StokSeriNo=@StokSeriNo,StokBedeni=@StokBedeni,StokAdedi=@StokAdedi,StokTarihi=@StokTarihi,KayitYapan=@KayitYapan,Magaza=@Magaza Where id=@id";
                 cmd = new SqlCommand(sorgu, con);
@@ -112,7 +136,7 @@ namespace StokTakip
                 cmd.Parameters.AddWithValue("@StokModeli", txb_stokModeli.Text);
                 cmd.Parameters.AddWithValue("@StokSeriNo", txb_stokSeriNo.Text);
                 cmd.Parameters.AddWithValue("@StokBedeni", cmb_stokBedeni.Text);
-                cmd.Parameters.AddWithValue("@StokAdedi", (txb_stokAdedi.Text));
+                cmd.Parameters.AddWithValue("@StokAdedi", Convert.ToInt32(txb_stokAdedi.Text));
                 cmd.Parameters.AddWithValue("@StokTarihi", dateTime_stokTarihi.Value);
                 cmd.Parameters.AddWithValue("@KayitYapan", txb_kayıtYapan.Text);
                 cmd.Parameters.AddWithValue("@Magaza", txb_magaza.Text);
@@ -122,8 +146,14 @@ namespace StokTakip
                 con.Close();
                 filldatagrid();
                 data_stokTakip.ClearSelection();
+            }
 
+            catch(Exception)
+            {
+                MessageBox.Show("Güncellenecek stok yok!", "StokTakip", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
 
 
@@ -132,26 +162,27 @@ namespace StokTakip
         {
             try
             {
-
+                     string sorgu = "Delete From stok1 Where id=@id";
+                     cmd = new SqlCommand(sorgu, con);
+                     cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txb_kayitNo.Text));
                 if (MessageBox.Show("Bu stok silinsin mi?", "Stok Sil", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    string sorgu = "Delete From stok1 Where id=@id";
-                    cmd = new SqlCommand(sorgu, con);
-                    cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txb_kayitNo.Text));
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    filldatagrid();
-                    data_stokTakip.ClearSelection();
-                    data_stokTakip[0, data_stokTakip.RowCount - 1].Selected = true;
-
-
+                     con.Open();
+                      cmd.ExecuteNonQuery();
+                      con.Close();
+                      filldatagrid();
+                      data_stokTakip.ClearSelection();
+                      data_stokTakip[0, data_stokTakip.RowCount - 1].Selected = true;
                 }
+                        
+
+
+                
             }
 
             catch (Exception)
             {
-                MessageBox.Show("Lütfen silmek için bir stok seçiniz", "StokTakip Hata Mesajı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Silinecek stok yok!", "StokTakip", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
@@ -186,7 +217,7 @@ namespace StokTakip
         public bool karsilastir(string data)
         {
 
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-IE5CNNN;Initial Catalog=Products;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=EDA\SQLEXPRESS;Initial Catalog=Products;Integrated Security=True");
             con.Open();
             SqlCommand sorgu = new SqlCommand("select StokSeriNo from stok1 where StokSeriNo = @StokSeriNo",con);
             sorgu.Parameters.AddWithValue("@StokSeriNo", data);

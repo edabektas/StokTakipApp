@@ -1,3 +1,9 @@
 is_global = true
+build_property.ApplicationManifest = 
+build_property.StartupObject = 
+build_property.ApplicationDefaultFont = 
+build_property.ApplicationHighDpiMode = 
+build_property.ApplicationUseCompatibleTextRendering = 
+build_property.ApplicationVisualStyles = 
 build_property.RootNamespace = StokTakip
-build_property.ProjectDir = C:\Users\Asus\source\repos\StokTakip\StokTakip\
+build_property.ProjectDir = C:\Users\Eda\Desktop\eda-github\StokTakipApp\StokTakip\

@@ -517,24 +517,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Asus\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Eda\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asus\\source\\repos\\StokTakip\\StokTakip\\StokTakip.csproj",
+      "projectUniqueName": "C:\\Users\\Eda\\Desktop\\eda-github\\StokTakipApp\\StokTakip\\StokTakip.csproj",
       "projectName": "StokTakip",
-      "projectPath": "C:\\Users\\Asus\\source\\repos\\StokTakip\\StokTakip\\StokTakip.csproj",
-      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asus\\source\\repos\\StokTakip\\StokTakip\\obj\\",
+      "projectPath": "C:\\Users\\Eda\\Desktop\\eda-github\\StokTakipApp\\StokTakip\\StokTakip.csproj",
+      "packagesPath": "C:\\Users\\Eda\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Eda\\Desktop\\eda-github\\StokTakipApp\\StokTakip\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Eda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -587,7 +586,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.410\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   },
