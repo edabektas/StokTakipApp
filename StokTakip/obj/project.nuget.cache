@@ -1,20 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "5fi4IGy7ieA5AwVB/XF93WVnZbNN0MWcv5VVe/Rehu9Z/UYj6kryhFSf0WJBUTJq8KuPVHwPAOzQPXAK6WqqBA==",
+  "dgSpecHash": "stUcApxQicuDXOx4Z9d6xv9b3Gv7FFNONxSMyv3tlf0vnww5p9u1Zr5SFI/Ef0/z6Y/ouz4n4nCHwybkRkXCdA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Eda\\Desktop\\eda-github\\StokTakipApp\\StokTakip\\StokTakip.csproj",
+  "projectFilePath": "C:\\Users\\Asus\\OneDrive\\Masaüstü\\eda-github\\eda-github\\StokTakipApp\\StokTakip\\StokTakip.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Eda\\.nuget\\packages\\ecocore\\7.0.0.14211\\ecocore.7.0.0.14211.nupkg.sha512",
-    "C:\\Users\\Eda\\.nuget\\packages\\ecowpf\\7.0.0.14211\\ecowpf.7.0.0.14211.nupkg.sha512",
-    "C:\\Users\\Eda\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
-    "C:\\Users\\Eda\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
-    "C:\\Users\\Eda\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
-    "C:\\Users\\Eda\\.nuget\\packages\\system.data.sqlclient\\4.8.3\\system.data.sqlclient.4.8.3.nupkg.sha512",
-    "C:\\Users\\Eda\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
-    "C:\\Users\\Eda\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+    "C:\\Users\\Asus\\.nuget\\packages\\ecocore\\7.0.0.14211\\ecocore.7.0.0.14211.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\ecowpf\\7.0.0.14211\\ecowpf.7.0.0.14211.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\system.data.sqlclient\\4.8.3\\system.data.sqlclient.4.8.3.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
   "logs": [
     {

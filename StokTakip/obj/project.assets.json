@@ -517,23 +517,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Eda\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Asus\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Eda\\Desktop\\eda-github\\StokTakipApp\\StokTakip\\StokTakip.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\OneDrive\\Masaüstü\\eda-github\\eda-github\\StokTakipApp\\StokTakip\\StokTakip.csproj",
       "projectName": "StokTakip",
-      "projectPath": "C:\\Users\\Eda\\Desktop\\eda-github\\StokTakipApp\\StokTakip\\StokTakip.csproj",
-      "packagesPath": "C:\\Users\\Eda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Eda\\Desktop\\eda-github\\StokTakipApp\\StokTakip\\obj\\",
+      "projectPath": "C:\\Users\\Asus\\OneDrive\\Masaüstü\\eda-github\\eda-github\\StokTakipApp\\StokTakip\\StokTakip.csproj",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Asus\\OneDrive\\Masaüstü\\eda-github\\eda-github\\StokTakipApp\\StokTakip\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Eda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -586,7 +587,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.410\\RuntimeIdentifierGraph.json"
       }
     }
   },

@@ -18,7 +18,7 @@ namespace StokTakip
         {
             InitializeComponent();
         }
-
+       
         SqlConnection con;  //sql conneciton sınıfından con adında bir nesne türetilir, bu veri ltabanına bağlantı yapabilmen için yani bir conneciton string değeri verip db ye bağlanabilmek için kullandığın sınıf
         SqlDataAdapter da; //sqldatadapter sınıfından da adında bir nesn türettik
         SqlCommand cmd;  //swqle bağlandıktan sonra kod kısmında bir sorgumuz varsa onu çalıştırabilmek için kullandığımız sınıf
@@ -34,10 +34,11 @@ namespace StokTakip
 
         void filldatagrid()
         {
-          con = new SqlConnection("Data Source=ED;Initial Catalog=Products;Integrated Security=True");  //daha önceden yazılan bir classtan örnek alma işlemi
+            try {
+
+                con = new SqlConnection("Data Source=DEczxczczxc;Initial Catalog=Products;Integrated Security=True;Connection Timeout=1;") ;  //daha önceden yazılan bir classtan örnek alma işlemi
                                                                                                                      //yapma sebebimiz ise bu class içerisindeki metot, property vb şeyleri burada kullanabilmek için, içindeki şey connection string  
-            try
-            {                                                                                         //server name: ., bağlanmak istediğim dbyi b belirtiyorum :products, ıntegrated security: veri tabanlarında dıaşrdan bir bağlantı 
+                                                                                               //server name: ., bağlanmak istediğim dbyi b belirtiyorum :products, ıntegrated security: veri tabanlarında dıaşrdan bir bağlantı 
                                                                                                       //geldiğinde güvenli bağlantı sağlamak için kullanılan bir güvenlik protoklu
                 da = new SqlDataAdapter("Select *From stok1", con);
                 ds = new DataSet();
@@ -51,11 +52,13 @@ namespace StokTakip
                              //veri tabanına olan bağlantıyı sonlandırırız. yani kısacası transaction yapısını korumak için başlattığımız bağlantıyı sonlandırırız.
                              //commit ve rollback işlemi de aynı şeyi sağlar
             }
-       
 
-            catch(SqlException ex)
+
+            catch (SqlException )
             {
-                if(MessageBox.Show("Veritabanına bağlanılamıyor. Devam etmek için TAMAM, çıkış için İPTAL butonuna basınız.", "StokTakip", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+               
+               
+                if (MessageBox.Show("Veritabanına bağlanılamıyor. Devam etmek için TAMAM, çıkış için İPTAL butonuna basınız.", "StokTakip", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     con = null;
                 }
@@ -189,9 +192,17 @@ namespace StokTakip
 
         private void btn_stokAra_Click(object sender, EventArgs e)
         {
-            SearchData(txb_stokAra.Text);
-            data_stokTakip.ClearSelection();
-            Temizle();
+            try
+            {
+                SearchData(txb_stokAra.Text);
+                data_stokTakip.ClearSelection();
+                Temizle();
+            }
+
+            catch(Exception)
+            {
+                MessageBox.Show("Aranacak stok yok!", "StokTakip", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void SearchData(string search)
@@ -217,7 +228,7 @@ namespace StokTakip
         public bool karsilastir(string data)
         {
 
-            SqlConnection con = new SqlConnection(@"Data Source=EDA\SQLEXPRESS;Initial Catalog=Products;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-IE5CNNN;Initial Catalog=Products;Integrated Security=True");
             con.Open();
             SqlCommand sorgu = new SqlCommand("select StokSeriNo from stok1 where StokSeriNo = @StokSeriNo",con);
             sorgu.Parameters.AddWithValue("@StokSeriNo", data);
