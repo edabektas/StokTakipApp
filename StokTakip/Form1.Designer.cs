@@ -60,6 +60,7 @@ namespace StokTakip
             this.data_stokTakip = new System.Windows.Forms.DataGridView();
             this.lbl_kayitNo = new System.Windows.Forms.Label();
             this.lbl_magaza = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.grb_kayıtIslemleri.SuspendLayout();
             this.grb_stokAra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_stokTakip)).BeginInit();
@@ -67,6 +68,7 @@ namespace StokTakip
             // 
             // grb_kayıtIslemleri
             // 
+            this.grb_kayıtIslemleri.Controls.Add(this.textBox1);
             this.grb_kayıtIslemleri.Controls.Add(this.txb_magaza);
             this.grb_kayıtIslemleri.Controls.Add(this.txb_kayitNo);
             this.grb_kayıtIslemleri.Controls.Add(this.txb_stokSeriNo);
@@ -149,6 +151,7 @@ namespace StokTakip
             this.txb_stokAdedi.Name = "txb_stokAdedi";
             this.txb_stokAdedi.Size = new System.Drawing.Size(249, 26);
             this.txb_stokAdedi.TabIndex = 11;
+            this.txb_stokAdedi.TextChanged += new System.EventHandler(this.txb_stokAdedi_TextChanged);
             // 
             // txb_stokModeli
             // 
@@ -229,6 +232,7 @@ namespace StokTakip
             this.txb_stokAra.PlaceholderText = "Stok Seri No";
             this.txb_stokAra.Size = new System.Drawing.Size(218, 27);
             this.txb_stokAra.TabIndex = 21;
+            this.txb_stokAra.TextChanged += new System.EventHandler(this.txb_stokAra_TextChanged);
             this.txb_stokAra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txb_stokAra_KeyUp);
             // 
             // btn_stokAra
@@ -375,6 +379,13 @@ namespace StokTakip
             this.lbl_magaza.TabIndex = 18;
             this.lbl_magaza.Text = "MAĞAZA";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(253, 249);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(51, 27);
+            this.textBox1.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -443,6 +454,7 @@ namespace StokTakip
         private System.Windows.Forms.TextBox txb_stokAra_stokBedeni;
         private System.Windows.Forms.TextBox txb_stokAra_stokModeli;
         private System.Windows.Forms.TextBox txb_stokAra_stokAdi;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

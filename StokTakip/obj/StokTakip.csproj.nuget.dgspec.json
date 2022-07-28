@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asus\\OneDrive\\Masaüstü\\eda-github\\eda-github\\StokTakipApp\\StokTakip\\StokTakip.csproj": {}
+    "C:\\Users\\Asus\\OneDrive\\Masaüstü\\stok-takip\\StokTakipApp\\StokTakip\\StokTakip.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asus\\OneDrive\\Masaüstü\\eda-github\\eda-github\\StokTakipApp\\StokTakip\\StokTakip.csproj": {
+    "C:\\Users\\Asus\\OneDrive\\Masaüstü\\stok-takip\\StokTakipApp\\StokTakip\\StokTakip.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus\\OneDrive\\Masaüstü\\eda-github\\eda-github\\StokTakipApp\\StokTakip\\StokTakip.csproj",
+        "projectUniqueName": "C:\\Users\\Asus\\OneDrive\\Masaüstü\\stok-takip\\StokTakipApp\\StokTakip\\StokTakip.csproj",
         "projectName": "StokTakip",
-        "projectPath": "C:\\Users\\Asus\\OneDrive\\Masaüstü\\eda-github\\eda-github\\StokTakipApp\\StokTakip\\StokTakip.csproj",
+        "projectPath": "C:\\Users\\Asus\\OneDrive\\Masaüstü\\stok-takip\\StokTakipApp\\StokTakip\\StokTakip.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus\\OneDrive\\Masaüstü\\eda-github\\eda-github\\StokTakipApp\\StokTakip\\obj\\",
+        "outputPath": "C:\\Users\\Asus\\OneDrive\\Masaüstü\\stok-takip\\StokTakipApp\\StokTakip\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

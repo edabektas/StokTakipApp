@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "stUcApxQicuDXOx4Z9d6xv9b3Gv7FFNONxSMyv3tlf0vnww5p9u1Zr5SFI/Ef0/z6Y/ouz4n4nCHwybkRkXCdA==",
+  "dgSpecHash": "UDlOH+TVLEb6jUcdlZIhQ2knMBUTsC+SLtFPqAVpVQnw4+WsFhzVdKrSmkfVobbm6oVU1sROn8QrdTSw3eMgfA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Asus\\OneDrive\\Masaüstü\\eda-github\\eda-github\\StokTakipApp\\StokTakip\\StokTakip.csproj",
+  "projectFilePath": "C:\\Users\\Asus\\OneDrive\\Masaüstü\\stok-takip\\StokTakipApp\\StokTakip\\StokTakip.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\ecocore\\7.0.0.14211\\ecocore.7.0.0.14211.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\ecowpf\\7.0.0.14211\\ecowpf.7.0.0.14211.nupkg.sha512",

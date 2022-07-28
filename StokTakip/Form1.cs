@@ -18,7 +18,7 @@ namespace StokTakip
         {
             InitializeComponent();
         }
-       
+
         SqlConnection con;  //sql conneciton sınıfından con adında bir nesne türetilir, bu veri ltabanına bağlantı yapabilmen için yani bir conneciton string değeri verip db ye bağlanabilmek için kullandığın sınıf
         SqlDataAdapter da; //sqldatadapter sınıfından da adında bir nesn türettik
         SqlCommand cmd;  //swqle bağlandıktan sonra kod kısmında bir sorgumuz varsa onu çalıştırabilmek için kullandığımız sınıf
@@ -28,18 +28,19 @@ namespace StokTakip
         private void Form1_Load(object sender, EventArgs e) //form start edildiğinde bu metot default olarak çalışır ve içeriswindeki kodları çalıştırır
         {
             filldatagrid();
-            
+
 
         }
 
         void filldatagrid()
         {
-            try {
+            try
+            {
 
-                con = new SqlConnection("Data Source=DEczxczczxc;Initial Catalog=Products;Integrated Security=True;Connection Timeout=1;") ;  //daha önceden yazılan bir classtan örnek alma işlemi
-                                                                                                                     //yapma sebebimiz ise bu class içerisindeki metot, property vb şeyleri burada kullanabilmek için, içindeki şey connection string  
-                                                                                               //server name: ., bağlanmak istediğim dbyi b belirtiyorum :products, ıntegrated security: veri tabanlarında dıaşrdan bir bağlantı 
-                                                                                                      //geldiğinde güvenli bağlantı sağlamak için kullanılan bir güvenlik protoklu
+                con = new SqlConnection("Data Source=DESKTOP-IE5CNNN;Initial Catalog=Products;Integrated Security=True;Connection Timeout=1;");  //daha önceden yazılan bir classtan örnek alma işlemi
+                                                                                                                                                 //yapma sebebimiz ise bu class içerisindeki metot, property vb şeyleri burada kullanabilmek için, içindeki şey connection string  
+                                                                                                                                                 //server name: ., bağlanmak istediğim dbyi b belirtiyorum :products, ıntegrated security: veri tabanlarında dıaşrdan bir bağlantı 
+                                                                                                                                                 //geldiğinde güvenli bağlantı sağlamak için kullanılan bir güvenlik protoklu
                 da = new SqlDataAdapter("Select *From stok1", con);
                 ds = new DataSet();
                 con.Open(); //sql bağlantısını başlatır
@@ -54,17 +55,17 @@ namespace StokTakip
             }
 
 
-            catch (SqlException )
+            catch (SqlException)
             {
-               
-               
+
+
                 if (MessageBox.Show("Veritabanına bağlanılamıyor. Devam etmek için TAMAM, çıkış için İPTAL butonuna basınız.", "StokTakip", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     con = null;
                 }
                 else
                 {
-                  this.Close();
+                    this.Close();
                 }
             }
         }
@@ -86,7 +87,7 @@ namespace StokTakip
         }
 
         private void btn_stokEkle_Click(object sender, EventArgs e)
-           
+
         {
 
             try
@@ -120,10 +121,10 @@ namespace StokTakip
                 data_stokTakip.ClearSelection();
             }
 
-            catch(Exception)
+            catch (Exception)
             {
-               
-                MessageBox.Show("Eklenecek stok yok!","StokTakip",MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                MessageBox.Show("Eklenecek stok yok!", "StokTakip", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -139,7 +140,20 @@ namespace StokTakip
                 cmd.Parameters.AddWithValue("@StokModeli", txb_stokModeli.Text);
                 cmd.Parameters.AddWithValue("@StokSeriNo", txb_stokSeriNo.Text);
                 cmd.Parameters.AddWithValue("@StokBedeni", cmb_stokBedeni.Text);
-                cmd.Parameters.AddWithValue("@StokAdedi", Convert.ToInt32(txb_stokAdedi.Text));
+                if (Convert.ToInt32(textBox1.Text) != 0)
+                {
+                    if (Convert.ToInt32(txb_stokAdedi.Text) < Convert.ToInt32(textBox1.Text))
+                    {
+                        var stokAdetEski = Convert.ToInt32(txb_stokAdedi.Text);
+                        var yeniStok = stokAdetEski + Convert.ToInt32(textBox1.Text);
+                        cmd.Parameters.AddWithValue("@StokAdedi", yeniStok);
+                    }
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@StokAdedi", Convert.ToInt32(txb_stokAdedi.Text));
+                }
+
                 cmd.Parameters.AddWithValue("@StokTarihi", dateTime_stokTarihi.Value);
                 cmd.Parameters.AddWithValue("@KayitYapan", txb_kayıtYapan.Text);
                 cmd.Parameters.AddWithValue("@Magaza", txb_magaza.Text);
@@ -151,9 +165,9 @@ namespace StokTakip
                 data_stokTakip.ClearSelection();
             }
 
-            catch(Exception)
+            catch (SqlException)
             {
-                MessageBox.Show("Güncellenecek stok yok!", "StokTakip", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Stok Güncellenemedi !", "StokTakip", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -165,50 +179,53 @@ namespace StokTakip
         {
             try
             {
-                     string sorgu = "Delete From stok1 Where id=@id";
-                     cmd = new SqlCommand(sorgu, con);
-                     cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txb_kayitNo.Text));
+                string sorgu = "Delete From stok1 Where id=@id";
+                cmd = new SqlCommand(sorgu, con);
+                cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txb_kayitNo.Text));
                 if (MessageBox.Show("Bu stok silinsin mi?", "Stok Sil", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                     con.Open();
-                      cmd.ExecuteNonQuery();
-                      con.Close();
-                      filldatagrid();
-                      data_stokTakip.ClearSelection();
-                      data_stokTakip[0, data_stokTakip.RowCount - 1].Selected = true;
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    filldatagrid();
+                    data_stokTakip.ClearSelection();
+                    data_stokTakip[0, data_stokTakip.RowCount - 1].Selected = true;
                 }
-                        
 
 
-                
+
+
             }
 
             catch (Exception)
             {
                 MessageBox.Show("Silinecek stok yok!", "StokTakip", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void btn_stokAra_Click(object sender, EventArgs e)
         {
             try
             {
-                SearchData(txb_stokAra.Text);
+                SearchData(txb_stokAra.Text, txb_stokAra_stokAdi.Text, txb_stokAra_stokBedeni.Text, txb_stokAra_stokModeli.Text, txb_stokAra_kayitYapan.Text, txb_stokAra_magaza.Text);
                 data_stokTakip.ClearSelection();
                 Temizle();
             }
 
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("Aranacak stok yok!", "StokTakip", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public void SearchData(string search)
+        public void SearchData(string stokSerino, string stokAdi, string stokBedeni, string stokModeli, string kayitYapan, string magaza)
         {
             con.Open();
-            string query = "select *from stok1 where StokSeriNo Like '%" + search + "%'";
+            string query = "select *from stok1 where StokSeriNo Like '%" + stokSerino
+                + "%' and StokAdi Like '%" + stokAdi + "%' and StokBedeni like '%" + stokBedeni
+                + "%' and StokModeli like '%" + stokModeli + "%' and KayitYapan like '%" + kayitYapan
+                + "%' and Magaza like '%" + magaza + "%'";
             da = new SqlDataAdapter(query, con);
             dt = new DataTable();
             da.Fill(dt);
@@ -230,11 +247,11 @@ namespace StokTakip
 
             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-IE5CNNN;Initial Catalog=Products;Integrated Security=True");
             con.Open();
-            SqlCommand sorgu = new SqlCommand("select StokSeriNo from stok1 where StokSeriNo = @StokSeriNo",con);
+            SqlCommand sorgu = new SqlCommand("select StokSeriNo from stok1 where StokSeriNo = @StokSeriNo", con);
             sorgu.Parameters.AddWithValue("@StokSeriNo", data);
 
             SqlDataReader varmi = sorgu.ExecuteReader();
-           
+
             if (varmi.Read())
             {
                 con.Close();
@@ -245,7 +262,7 @@ namespace StokTakip
                 con.Close();
                 return true; //veri tabanında yok
             }
-         }
+        }
 
 
         public void Temizle()
@@ -261,11 +278,11 @@ namespace StokTakip
             txb_magaza.Clear();
         }
 
-      
+
 
         private void txb_stokAra_stokAdi_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 btn_stokAra_Click(sender, e);
             }
@@ -273,7 +290,7 @@ namespace StokTakip
 
         private void txb_stokAra_stokModeli_KeyUp(object sender, KeyEventArgs e)
         {
-           if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 btn_stokAra_Click(sender, e);
             }
@@ -301,6 +318,21 @@ namespace StokTakip
             {
                 btn_stokAra_Click(sender, e);
             }
+        }
+
+        private void txb_stokAra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txb_stokAdedi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_MouseClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
