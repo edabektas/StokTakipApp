@@ -30,6 +30,7 @@ namespace StokTakip
         private void InitializeComponent()
         {
             this.grb_kayıtIslemleri = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txb_magaza = new System.Windows.Forms.TextBox();
             this.txb_kayitNo = new System.Windows.Forms.TextBox();
             this.txb_stokSeriNo = new System.Windows.Forms.TextBox();
@@ -60,7 +61,7 @@ namespace StokTakip
             this.data_stokTakip = new System.Windows.Forms.DataGridView();
             this.lbl_kayitNo = new System.Windows.Forms.Label();
             this.lbl_magaza = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.grb_kayıtIslemleri.SuspendLayout();
             this.grb_stokAra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_stokTakip)).BeginInit();
@@ -68,6 +69,7 @@ namespace StokTakip
             // 
             // grb_kayıtIslemleri
             // 
+            this.grb_kayıtIslemleri.Controls.Add(this.label1);
             this.grb_kayıtIslemleri.Controls.Add(this.textBox1);
             this.grb_kayıtIslemleri.Controls.Add(this.txb_magaza);
             this.grb_kayıtIslemleri.Controls.Add(this.txb_kayitNo);
@@ -80,10 +82,18 @@ namespace StokTakip
             this.grb_kayıtIslemleri.Controls.Add(this.txb_stokAdi);
             this.grb_kayıtIslemleri.Location = new System.Drawing.Point(184, 8);
             this.grb_kayıtIslemleri.Name = "grb_kayıtIslemleri";
-            this.grb_kayıtIslemleri.Size = new System.Drawing.Size(304, 408);
+            this.grb_kayıtIslemleri.Size = new System.Drawing.Size(405, 408);
             this.grb_kayıtIslemleri.TabIndex = 0;
             this.grb_kayıtIslemleri.TabStop = false;
             this.grb_kayıtIslemleri.Text = "Kayıt İşlemleri";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(261, 248);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(51, 26);
+            this.textBox1.TabIndex = 18;
             // 
             // txb_magaza
             // 
@@ -254,9 +264,9 @@ namespace StokTakip
             this.grb_stokAra.Controls.Add(this.txb_stokAra_stokAdi);
             this.grb_stokAra.Controls.Add(this.btn_stokAra);
             this.grb_stokAra.Controls.Add(this.txb_stokAra);
-            this.grb_stokAra.Location = new System.Drawing.Point(509, 8);
+            this.grb_stokAra.Location = new System.Drawing.Point(595, 8);
             this.grb_stokAra.Name = "grb_stokAra";
-            this.grb_stokAra.Size = new System.Drawing.Size(550, 315);
+            this.grb_stokAra.Size = new System.Drawing.Size(550, 334);
             this.grb_stokAra.TabIndex = 11;
             this.grb_stokAra.TabStop = false;
             this.grb_stokAra.Text = "STOK ARA";
@@ -308,9 +318,9 @@ namespace StokTakip
             // 
             // btn_stokEkle
             // 
-            this.btn_stokEkle.Location = new System.Drawing.Point(515, 340);
+            this.btn_stokEkle.Location = new System.Drawing.Point(595, 348);
             this.btn_stokEkle.Name = "btn_stokEkle";
-            this.btn_stokEkle.Size = new System.Drawing.Size(144, 48);
+            this.btn_stokEkle.Size = new System.Drawing.Size(150, 48);
             this.btn_stokEkle.TabIndex = 26;
             this.btn_stokEkle.Text = "STOK EKLE";
             this.btn_stokEkle.UseVisualStyleBackColor = true;
@@ -318,7 +328,7 @@ namespace StokTakip
             // 
             // btn_stokGüncelle
             // 
-            this.btn_stokGüncelle.Location = new System.Drawing.Point(717, 340);
+            this.btn_stokGüncelle.Location = new System.Drawing.Point(803, 348);
             this.btn_stokGüncelle.Name = "btn_stokGüncelle";
             this.btn_stokGüncelle.Size = new System.Drawing.Size(144, 48);
             this.btn_stokGüncelle.TabIndex = 27;
@@ -328,7 +338,7 @@ namespace StokTakip
             // 
             // btn_stokSil
             // 
-            this.btn_stokSil.Location = new System.Drawing.Point(915, 340);
+            this.btn_stokSil.Location = new System.Drawing.Point(1001, 348);
             this.btn_stokSil.Name = "btn_stokSil";
             this.btn_stokSil.Size = new System.Drawing.Size(144, 48);
             this.btn_stokSil.TabIndex = 28;
@@ -356,7 +366,7 @@ namespace StokTakip
             this.data_stokTakip.RowHeadersWidth = 51;
             this.data_stokTakip.RowTemplate.Height = 29;
             this.data_stokTakip.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.data_stokTakip.Size = new System.Drawing.Size(1037, 286);
+            this.data_stokTakip.Size = new System.Drawing.Size(1102, 286);
             this.data_stokTakip.TabIndex = 29;
             this.data_stokTakip.TabStop = false;
             this.data_stokTakip.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_stokTakip_CellEnter);
@@ -379,18 +389,20 @@ namespace StokTakip
             this.lbl_magaza.TabIndex = 18;
             this.lbl_magaza.Text = "MAĞAZA";
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.Location = new System.Drawing.Point(253, 249);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(51, 27);
-            this.textBox1.TabIndex = 18;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(318, 254);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 20);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Ekle/Azalt";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 722);
+            this.ClientSize = new System.Drawing.Size(1152, 722);
             this.Controls.Add(this.lbl_magaza);
             this.Controls.Add(this.lbl_kayitNo);
             this.Controls.Add(this.data_stokTakip);
@@ -455,6 +467,7 @@ namespace StokTakip
         private System.Windows.Forms.TextBox txb_stokAra_stokModeli;
         private System.Windows.Forms.TextBox txb_stokAra_stokAdi;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
